@@ -1,0 +1,529 @@
+/* ========== LAYOUT ========== */
+.landingLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #050505;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  font-family: var(--font-geist-sans), 'Inter', -apple-system, sans-serif;
+}
+
+/* ========== BACKGROUND EFFECTS ========== */
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgGlow1 {
+  position: absolute;
+  top: -200px;
+  left: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bgGlow2 {
+  position: absolute;
+  bottom: -150px;
+  right: -50px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  position: relative;
+  z-index: 10;
+}
+
+.navLogo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: white;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 36px;
+  height: 36px;
+  background: #ffffff;
+  border: 1.5px solid #333;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.logoTriangle {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 20px solid #111111;
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  color: #888;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: white;
+}
+
+.navButton {
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.navButton:hover {
+  background: #e5e5e5;
+  transform: translateY(-1px);
+}
+
+/* ========== MAIN CONTENT ========== */
+.mainContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem 4rem;
+  gap: 3rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* ========== LEFT PANEL ========== */
+.leftPanel {
+  flex: 1;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #aaa;
+  width: fit-content;
+  letter-spacing: 0.02em;
+}
+
+.badge svg {
+  opacity: 0.6;
+  width: 14px;
+  height: 14px;
+}
+
+.title {
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+}
+
+.titleAccent {
+  background: linear-gradient(135deg, #ffffff 0%, #666666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.7;
+  max-width: 440px;
+  margin: 0;
+}
+
+/* ========== CTA BUTTONS ========== */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
+}
+
+.primaryButton {
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #000;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+.primaryButton:hover {
+  background: #e5e5e5;
+  transform: translateY(-2px);
+}
+
+.primaryButton:hover .arrowIcon {
+  transform: translateX(3px);
+}
+
+.arrowIcon {
+  transition: transform 0.25s ease;
+}
+
+.secondaryButton {
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #ccc;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.25s ease;
+}
+
+.secondaryButton:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ========== FEATURE PILLS ========== */
+.featurePills {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  color: #888;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.pill:hover {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ccc;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.pill svg {
+  width: 14px;
+  height: 14px;
+  opacity: 0.5;
+}
+
+/* ========== STATS ROW ========== */
+.statsRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.statNumber {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  color: #555;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.statDivider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ========== RIGHT PANEL (3D SCENE) ========== */
+.fleetCanvas {
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+
+.rightPanel {
+  flex: 1.15;
+  position: relative;
+  min-height: 540px;
+  max-width: 650px;
+}
+
+.sceneContainer {
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fleetCanvas {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+}
+
+.sceneLoader {
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.loaderPulse {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  animation: loaderPulseAnim 1.5s ease-in-out infinite;
+}
+
+@keyframes loaderPulseAnim {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+}
+
+/* ========== FLOATING INFO CARDS ========== */
+.floatingCard {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 0.9rem;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  z-index: 10;
+  animation: floatCard 5s ease-in-out infinite;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.card1 {
+  top: 10%;
+  right: -4%;
+  animation-delay: 0s;
+}
+
+.card2 {
+  bottom: 14%;
+  left: -4%;
+  animation-delay: 2.5s;
+}
+
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.cardIconWrap {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 9px;
+  color: #ccc;
+}
+
+.cardLabel {
+  font-size: 0.65rem;
+  color: #666;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cardValue {
+  font-size: 0.82rem;
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .mainContent {
+    flex-direction: column;
+    padding: 1.5rem 2rem 3rem;
+    gap: 2.5rem;
+  }
+
+  .leftPanel {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .description {
+    max-width: 100%;
+  }
+
+  .ctaGroup {
+    justify-content: center;
+  }
+
+  .featurePills {
+    justify-content: center;
+  }
+
+  .statsRow {
+    justify-content: center;
+  }
+
+  .rightPanel {
+    max-width: 100%;
+    width: 100%;
+    min-height: 420px;
+  }
+
+  .sceneContainer {
+    min-height: 420px;
+  }
+
+  .card1 {
+    right: 5%;
+    top: 5%;
+  }
+
+  .card2 {
+    left: 5%;
+    bottom: 8%;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .mainContent {
+    padding: 1rem 1.5rem 2rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .primaryButton, .secondaryButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .statsRow {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .rightPanel {
+    min-height: 300px;
+  }
+
+  .sceneContainer,
+  .sceneLoader {
+    min-height: 300px;
+  }
+
+  .floatingCard {
+    display: none;
+  }
+
+  .featurePills {
+    gap: 0.4rem;
+  }
+}
